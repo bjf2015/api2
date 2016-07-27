@@ -20,6 +20,7 @@ $(function(){
     };
     url = 'https://www.googleapis.com/youtube/v3/search';
     $.getJSON(url, params, function(responseData) {
+        console.log(responseData);
          var mySearch = responseData;
          showResults(mySearch.items);
       });
@@ -30,10 +31,10 @@ $(function(){
   function showResults(thePropertyToShow){
     var thumbnail = "";
     $.each(thePropertyToShow, function(index, value){
-    //console.log(value.snippet.thumbnails.medium.url);
-     thumbnail += '<a>' + value.snippet.thumbnails.medium.url + '</a>' + '<br>';
+    var videoUrl = "https://www.youtube.com/watch?v=" + value.id.videoId;
+     thumbnail += '<a href='+videoUrl+'><img src='+ value.snippet.thumbnails.medium.url +'></a>'  + '<br>';
     });
-    console.log(thumbnail)
+    // console.log(thumbnail)
     $('#search-results').html('');
     $('#search-results').append(thumbnail);
   };
