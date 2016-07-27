@@ -1,0 +1,45 @@
+html {
+  background: black;
+}
+body {
+  background-color: mintcream;
+  margin: 14px;
+  position: static;
+    border-top: 1px solid beige;
+    border-bottom: 1px solid beige;
+    font-family: 'Open Sans', sans-serif;
+
+}
+.title {
+  color: dimgray;
+}
+form {
+  margin: 0 auto;
+  width: 60%;
+  text-align: center;
+  border-bottom: 3px dotted hotpink;
+  padding: 2rem;
+
+}
+#query {
+  color: purple;
+  /*font-family: 'Open Sans', sans-serif;
+  font-weight: 400;*/
+}
+#submit-button {
+  background: pink;
+  color: black;
+  border-radius: 10px;
+  font-family: 'Open Sans', sans-serif;
+  height: 32px;
+  width: 74px;
+}
+#submit-button:hover {
+  background: rgba(0, 0, 255, 0.4);
+}
+div{
+  margin: 0 auto;
+  text-align: center;
+  /*border: 3px dotted green;*/
+  padding: 2rem;
+}
