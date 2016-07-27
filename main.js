@@ -14,10 +14,11 @@ $(function(){
   /*Function to GET the data from the third party Server*/
   function getRequest(searchedTitle){
     var params = {
-      s: searchedTitle,
-      r: 'json',
+      q: searchedTitle,
+      part: 'snippet',
+      key: 'AIzaSyC6eeaoDXh1gZ9de36gFgxkb45f9WIdDQg'
     };
-    url = 'http://www.omdbapi.com';
+    url = 'https://www.googleapis.com/youtube/v3/search';
     $.getJSON(url, params, function(responseData) {
          var mySearch = responseData.Search;
          showResults(mySearch);
