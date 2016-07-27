@@ -1,4 +1,4 @@
-console.log('First Application Programming Interface');
+//console.log('First Application Programming Interface');
 $(function(){
     
     /*This grabs the value the User is looking for and 
@@ -16,22 +16,24 @@ $(function(){
     var params = {
       q: searchedTitle,
       part: 'snippet',
-      key: 'AIzaSyC6eeaoDXh1gZ9de36gFgxkb45f9WIdDQg'
+      key: 'AIzaSyDTv6VN6qEAQvF-L00eMR3MZAENYB5nOlc'
     };
     url = 'https://www.googleapis.com/youtube/v3/search';
     $.getJSON(url, params, function(responseData) {
-         var mySearch = responseData.Search;
-         showResults(mySearch);
+         var mySearch = responseData;
+         showResults(mySearch.items);
       });
   };
 
   /*Function to Render/Show the specific Data we are looking for*/
+  thePropertyToShow = {};
   function showResults(thePropertyToShow){
-    var titleList = "";
+    var thumbnail = "";
     $.each(thePropertyToShow, function(index, value){
-      titleList += '<p>' + value.Title + '</p>';
-      console.log(value.Title);
+    //console.log(value.snippet.thumbnails.medium.url);
+     thumbnail += '<a>' + value.snippet.thumbnails.medium.url + '</a>' + '<br>';
     });
+    console.log(thumbnail)
     $('#search-results').html('');
-    $('#search-results').append(titleList);
+    $('#search-results').append(thumbnail);
   };
